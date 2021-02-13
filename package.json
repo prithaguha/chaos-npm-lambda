@@ -1,0 +1,21 @@
+{
+  "name": "lambda-choas",
+  "main": "main.js",
+  "scripts": {
+    "webpack": "node_modules/.bin/webpack --config webpack.control.config.js --progress",
+    "buildFile": "cd ../",
+    "zip": "cd dist && zip -r lambda-chaos.zip index.js",
+    "package": "npm run buildFile && npm run zip",
+    "build": "rm -rf dist && npm run webpack",
+    "postbuild": "npm run package"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.843.0",
+    "chaos-library": "0.0.5",
+    "chaos-monkey": "^0.7.2",
+    "moment": "^2.29.1",
+    "sleep": "^6.3.0",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
